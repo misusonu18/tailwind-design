@@ -10,12 +10,18 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="body">
     <header class="text-yellow-500 body-font bg-white fixed w-full">
         <div class="container w-full lg:mx-auto flex flex-wrap p-5 flex-row items-center z-auto">
             <div class="flex justify-between pl-5">
                 <button class="ml-auto items-center mb-0 focus:outline-none hover:text-yellow-600 menu-button">
-                    <i class="fa fa-bars"></i>
+                    <div class="open-icon">
+                        <i class="fa fa-bars"></i>
+                    </div>
+
+                    <div class="close-icon hidden">
+                        <i class="fa fa-times"></i>
+                    </div>
                 </button>
 
                 <a class="flex title-font font-medium items-center text-center text-yellow-500 mb-1 md:mb-0" href="index.html">
@@ -46,23 +52,23 @@
     <div class="fixed min-h-screen mt-12 md:flex z-auto">
         <div class="sidebar border-4 border-solid border-yellow-300 bg-white w-80 absolute space-y-6 py-7 px-2 inset-y-0 left-0 transform -translate-x-full transition duration-700 ease-in-out">
             <nav class="text-yellow-500 text-center">
-                <a href="#updates" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white">
+                <a href="#updates" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white items-button">
                     Updates
                 </a>
 
-                <a href="#testimonials" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white">
+                <a href="#testimonials" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white items-button">
                     Testimonials
                 </a>
 
-                <a href="#about-us" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white">
+                <a href="#about-us" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white items-button">
                     About Us
                 </a>
 
-                <a href="#gallery" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white">
+                <a href="#gallery" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white items-button">
                     Gallery
                 </a>
 
-                <a href="#contact" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white">
+                <a href="#contact" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-yellow-600 hover:text-white items-button">
                     Contact
                 </a>
             </nav>
@@ -461,7 +467,7 @@
         </div>
     </section>
 
-    <div class="w-full md:hidden lg:hidden h-screen">
+    <div class="w-full md:hidden lg:hidden">
         <section id="bottom-navigation" class="block fixed inset-x-0 bottom-0 z-10 bg-white shadow">
             <div class="flex justify-between text-yellow-500">
                 <a href="#" class="w-full focus:outline-none hover:text-yellow-600 justify-center inline-block text-center pt-2 pb-1 quote-mobile">
@@ -557,9 +563,13 @@
         const quoteMobile = document.querySelector(".quote-mobile");
         const modal = document.querySelector(".modal");
         const closeButton = document.querySelector(".close-button");
+        const openIcon = document.querySelector(".open-icon");
+        const closeIcon = document.querySelector(".close-icon");
 
         btn.addEventListener("click", () => {
             sidebar.classList.toggle("-translate-x-full");
+            openIcon.classList.toggle('hidden')
+            closeIcon.classList.toggle('hidden')
         });
 
         quote.addEventListener("click", () => {
