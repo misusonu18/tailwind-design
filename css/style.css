@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+.font-architects {
+    font-family: Architects Daughter;
+}
+
+.mt-16-5 {
+    margin-top: 4.5rem;
+}
+
+header, .sidebar {
+    z-index: 1000;
+}
+
+#contact {
+    z-index: -1;
+}
+
+.h-50-vh {
+    height: 120vh;
+}
+
+.h-screen-50 {
+    height: 50vh !important;
+}
